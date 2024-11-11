@@ -1,24 +1,57 @@
-<!doctype HTML>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snäkkide leht</title>
-  <link href='shared-styles.css' rel='stylesheet'> <!-- üldine jagatud CSS -->
-  <link href='snäkid.css' rel='stylesheet'> <!-- lisada spetsiifiline CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magustoitude leht</title>
+  <link href="shared-styles.css" rel="stylesheet"> <!-- üldine jagatud CSS -->
+  <link href='' rel='stylesheet'> <!-- lisada spetsiifiline CSS -->
 </head>
 
 <body>
-<div>  
-    <nav>
+    <div>
+      <nav>
         <h1>LOGO</h1>
         <div class="nav-main">
-            <a href="index.html">Pealeht / pearoa leht</a>
-            <a href="magustoidud.html">Magustoitude vaheleht</a>
+          <a href="index.html">Pearoad</a>
+          <a href="magustoidud.html">Magustoidud</a>
+          <p class="nav-main currentPage">Snäkid</p>
         </div>
-    </nav>
-    <h1><b>Tegemist on snäkkide lehega</b></h1>
-</div>
-</body>
+      </nav>
+      <div class="content-main">
+        <div class="left-sidebar">
+
+          <select>
+            <option value="" disabled selected>Täpsustused</option>
+            <option value="esimene">Esimene valik</option>
+            <option value="teine">Teine valik</option>
+            <option value="kolmas">Kolmas valik</option>
+          </select>
+
+          <div class="left-sidebar-cards">
+            <div class="card">
+              <h2>Kaart 1</h2>
+              <p>Siin on mingi tekst, mis kirjeldab seda kaarti.</p>
+            </div>
+            <div class="card">
+              <h2>Kaart 2</h2>
+              <p>Siin on mingi tekst, mis kirjeldab seda kaarti.</p>
+            </div>
+            <div class="card">
+              <h2>Kaart 3</h2>
+              <p>Siin on mingi tekst, mis kirjeldab seda kaarti.</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="main-content">
+          <h1>Sinu toit</h1>
+          <p>Midagi selle toidu kohta 1.</p>
+          <p>Midagi selle toidu kohta 2.</p>
+          <p>Midagi selle toidu kohta 3.</p>
+          <p>Midagi selle toidu kohta 4.</p>
+          <p>Midagi selle toidu kohta 5.</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
