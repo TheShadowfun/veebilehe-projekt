@@ -26,6 +26,15 @@ nav {
     justify-self: end;
 }
 
+.currentPage {   /* Kasutada et n�data lehte kus asud */
+    padding: 0.5rem 1.5rem;
+    text-decoration: None;
+    color: rgb(46, 53, 53);
+    font-size: 1.25rem;
+    background-color: rgb(205, 214, 214);
+    border-radius: 10px;
+}
+
 .nav-main a {
     padding: 0.5rem 1.5rem;
     text-decoration: None;
