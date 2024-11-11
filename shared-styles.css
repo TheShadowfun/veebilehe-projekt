@@ -18,7 +18,7 @@ nav {
     justify-self: end;
 }
 
-.currentPage {   /* Kasutada et nädata lehte kus asud */
+.currentPage {   /* Kasutada et nï¿½data lehte kus asud */
     padding: 0.5rem 1.5rem;
     text-decoration: None;
     color: rgb(46, 53, 53);
@@ -86,4 +86,3 @@ select {
     grid-auto-rows: max-content;
     gap: 1rem;
     padding: 1rem;
-}
