@@ -4,12 +4,20 @@
     box-sizing: border-box;
 }
 
+.nav-wrapper {
+    position: sticky;
+    padding-top: 0.25vh;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
 nav {
-    margin: 0.5rem;
+    margin: 0 0.5rem;
     display: flex;
     padding: 0.5rem 1rem;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(140, 140, 140, 1);
     border-radius: 10px;
 }
 
@@ -78,11 +86,50 @@ select {
 }
 
 .main-content {
-    margin-top: 7.5vh;
-    max-width: 75%;
+    display: flex;
+    margin-top: 2.5vh;
+    width: 75%;
     height: 80vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: max-content;
-    gap: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+.main-content-heading {
+    font-size: 4em;
+
+}
+
+.main-content-thumbnail {
+    margin: 1em;
+    max-width: 45vw;
+    border-radius: 10px;
+}
+
+.main-content-list {
+    display: flex;
+}
+
+.main-content ul {
+    margin: 0 2em;
+
+}
+
+.main-content li {
+    font-size: 1.5em;
+    padding: 0.125em 0;
+}
+
+.main-content-process {
+    margin: 1em 0;
+    max-width: 80%;
+    font-size: 1.25em;
+}
+
+.main-content-gallery {
+    max-width: 20%;
+    border-radius: 10px;
+}
