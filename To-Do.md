@@ -7,7 +7,6 @@ CSS
 
 html
   - search by ingredient menu
-  - headingu kolm lahtrit (näidaku lehte, millel asume)
   - sisu, järjekorras:
     * pealkiri
     * valmistusaeg
