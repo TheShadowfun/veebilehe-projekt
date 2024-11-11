@@ -7,7 +7,7 @@
 .nav-wrapper {
     position: sticky;
     padding-top: 0.25vh;
-    top: 0;
+    top: 0 !important;
     z-index: 1000;
     background-color: white;
 }
@@ -89,7 +89,6 @@ select {
     display: flex;
     margin-top: 2.5vh;
     width: 75%;
-    height: 80vh;
     padding: 0.5rem;
     flex-direction: column;
     justify-content: flex-start;
@@ -111,6 +110,8 @@ select {
 
 .main-content-list {
     display: flex;
+    overflow-wrap: anywhere;
+    max-width: 62.5%;
 }
 
 .main-content ul {
@@ -124,8 +125,8 @@ select {
 }
 
 .main-content-process {
-    margin: 1em 0;
-    max-width: 80%;
+    margin-top: 2em;
+    max-width: 85%;
     font-size: 1.25em;
 }
 
