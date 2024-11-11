@@ -6,13 +6,13 @@ translation api
 CSS
 
 html
-  search by ingredient menu
-  headingu kolm lahtrit
-  näita järkjekorras:
-    pealkiri
-    valmistusaeg
-    pilt
-    kaks infolauset
-    koostisosad
-    protsess
-    pilte
+  - search by ingredient menu
+  - headingu kolm lahtrit (näidaku lehte, millel asume)
+  - sisu, järjekorras:
+    * pealkiri
+    * valmistusaeg
+    * pilt
+    * kaks infolauset
+    * koostisosad
+    * protsess
+    * pilte
