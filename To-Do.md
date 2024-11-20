@@ -1,7 +1,10 @@
 päevamiil - avaneb lehel esimesena
 
 to-do
-translation api
+
+food api
+  translation api
+  search possibilities
 
 CSS
 
