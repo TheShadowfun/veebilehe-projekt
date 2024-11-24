@@ -190,3 +190,58 @@ select {
     img:nth-child(5) {
     animation-delay: 8s;
     }
+
+    /* API retsepti genereerimise css siit alla */
+    #apiContentContainer {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f1f1f1;
+      }
+  
+      #apiContentContainer pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+  
+      #fetchApiContentBtn, #randomRecipeBtn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+  
+      #fetchApiContentBtn:hover, #randomRecipeBtn:hover {
+        background-color: #218838;
+      }
+  
+      /* Loading Indicator */
+      #loading {
+        display: none;
+      }
+  
+      /* Responsive Image */
+      #recipeContainer img, #apiContentContainer img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+  
+      /* Styling for Thumbnail Images */
+      .thumbnail {
+        width: 150px; /* Set desired width */
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+  
+      /* Optional: Styling for Recipe List Items */
+      #koostisosadList li {
+        margin-bottom: 5px;
+      }
