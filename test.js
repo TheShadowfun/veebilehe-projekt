@@ -11,7 +11,6 @@ function fetchRandomRecipe() {
 
   // Kuvame laadimise sõnumi
   const recipeContainer = document.getElementById('recipeContainer');
-  /*recipeContainer.innerHTML = '<p>Laadimine...</p>';*/
 
   // Teeme API päringu
   fetch(apiURL)
