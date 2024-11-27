@@ -187,7 +187,7 @@ select {
     align-items: center;
     align-content: flex-end;
     flex-wrap: nowrap;
-    background-color: rgb(181,198,137,0.8);
+    background-color: rgb(190, 196, 131,0.90);
 }
 
 .main-content-heading {
