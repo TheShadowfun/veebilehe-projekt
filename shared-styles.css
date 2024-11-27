@@ -98,30 +98,45 @@ select {
 }
 
 .main-content-heading {
-    font-size: 4em;
+    font-size: 3em;
 
 }
 
 .main-content-thumbnail {
     margin: 1em;
     max-width: 45vw;
+    min-width: 40vw;
     border-radius: 10px;
 }
 
 .main-content-list {
     display: flex;
-    overflow-wrap: anywhere;
-    max-width: 62.5%;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 75%;
 }
 
-.main-content ul {
-    margin: 0 2em;
-
+.main-content-list ul {
+    flex: 1;
+    margin: 0 1em;
+    min-width: 0;
 }
 
-.main-content li {
-    font-size: 1.5em;
+.main-content-list li {
+    font-size: 1.25em;
     padding: 0.125em 0;
+    overflow-wrap: break-word; /* Ensures text wraps */
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.main-content-second-list {
+    align-self: center;
+}
+
+.main-content-process ol {
+    list-style-type: decimal;
+    padding-left: 20px;
 }
 
 .main-content-process {
@@ -245,3 +260,4 @@ select {
       #koostisosadList li {
         margin-bottom: 5px;
       }
+
