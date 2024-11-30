@@ -8,11 +8,7 @@
   <link href='shared-styles.css' rel='stylesheet'>
   <link href='magustoidud.css' rel='stylesheet'>
 
-  <!-- Inline CSS for New Elements -->
-  <style>
-    /* Styling for the API Content Section */
-    
-  </style>
+  
 </head>
 <body>
   <div>
@@ -49,26 +45,62 @@
             <h2>Kaart 3</h2>
             <p>Siin on mingi tekst, mis kirjeldab seda kaarti.</p>
           </div>
+          <div class="section-nav">
+            <h3>Jump to Sections</h3>
+            <ul>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#instructions">Instructions</a></li>
+            </ul>
+        </div>
         </div>
 
       </div>
-      <div class="main-content">
-        <h1 id="dessertTitle" class="main-content-heading">Sinu magustoit</h1>
-        <h4 id="preparationTime">Toiduks valmistamiseks kuluv aeg on ~ igavik</h4>
-        <img class="main-content-thumbnail" src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Magustoidu Thumbnail"/>
-        <div class="main-content-list">
-          <h3>Koostisosad:</h3>
-          <ul id="koostisosadList">
-            <!-- Koostisosad lisatakse siia -->
-          </ul>
+    
+        <div class="main-content">
+          <h1 class="main-content-heading">Sinu pearoog</h1>
+          <h4 class="main-content-time">toiduks valmistamiseks kuluv aeg on ~ igavik</h4>
+          <img class="main-content-thumbnail" src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=800"/>
+          <div class="main-content-list" id="ingredients">
+            <ul class="main-content-first-list">
+              <li>1.asi</li>
+              <li>2.asi</li>
+              <li>3.asidasdaasdjbasdjhsabdksdsfsdgsdfgsdfgsdgfsdsdfgdfsds</li>
+              <li>4.asi</li>
+              <li>5.asi</li>
+            </ul>
+            <ul class="main-content-second-list">
+              <li>6.asi</li>
+              <li>7.asi</li>
+              <li>8.asidewferferfdwedwedwedewdeaaaaaaaaaasdfgsdfgsdfgfsdfga </li>
+              <li>9.asi</li>
+              <li>10.asi</li>
+            </ul>
         </div>
+        <div>
+          <ol class="main-content-process" id="instructions">
+            <li>mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada. mingi suht pikk tekst selle kohta, kuidas seda toitu valmistada.</li>
+          </ol>
+        </div> 
         <!-- Get Random Recipe Button -->
-        <button id="randomRecipeBtn">Genereeri Retsept</button>
+        <section class="content">
+          <div class="box">
+            <button class="cta" onclick="generateRecipe()">
+                <a >Genereeri retsept <span></span></a>
+                <span class="shape">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+          </div>
+      </section>
         
-        <!-- Recipe Container -->
-        <div id="recipeContainer" class="main-content">
-          <!-- Recipe details will appear here -->
-        </div>
+       
 
 
         <p class="main-content-process">
@@ -87,6 +119,11 @@
   </div>
 
   <!-- JavaScript to Fetch and Display Content -->
-  <script src="test.js"></script>
+  <script src="magustoit.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="nupp.js"></script>
+
+
+
 </body>
 </html>
