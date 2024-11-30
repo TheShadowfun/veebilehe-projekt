@@ -86,7 +86,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
   
 html, body {
     overflow-x: hidden;
@@ -94,8 +93,9 @@ html, body {
     height: 100%;
     background-image: url('leftRowBG.png');
     background-size: cover;                  /* Scale image to cover entire background */
-    background-repeat: repeat;            /* Prevent image from repeating */
-    background-position: center left;  /* Path to the image */
+    background-repeat: no-repeat;            /* Prevent image from repeating */
+    background-position: bottom left;      /* Center the image */
+    background-attachment: fixed;  /* Path to the image */
 }
 
      /* Center the image */
@@ -181,6 +181,7 @@ select {
     border-radius: 10px;
     justify-items: center;
 }
+
 
 .main-content {
     display: flex;
