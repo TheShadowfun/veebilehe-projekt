@@ -90,8 +90,9 @@
 body {
   background-image: url('leftRowBG.png'); /* Path to the image */
   background-size: cover;                  /* Scale image to cover entire background */
-  background-repeat: repeat;            /* Prevent image from repeating */
-  background-position: center left;      /* Center the image */
+  background-repeat: no-repeat;            /* Prevent image from repeating */
+  background-position: bottom left;      /* Center the image */
+  background-attachment: fixed;
 }
 
 .nav-wrapper {
@@ -176,6 +177,7 @@ select {
     border-radius: 10px;
     justify-items: center;
 }
+
 
 .main-content {
     display: flex;
