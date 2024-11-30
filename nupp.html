@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="nupp.css">
+    <link rel="stylesheet" href="nupp1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <section class="content">
+       
+        <!--  WOOOOOW  -->
+        <div class="box">
+            <button class="cta">
+                <a >Click me <span></span></a>
+                <span class="shape">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+    </section>
+    <div class="centerer">
+        
+        
+       
+
+    <script>
+        $(".cta").click(function(){
+         $(this).addClass("active").delay(300).queue(function
+        (next){
+            $(this).removeClass("active");
+            next();
+          });
+        });
+    </script>
+    
+    
+      
+</body>    
+
+</html>
