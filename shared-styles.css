@@ -159,31 +159,42 @@ nav {
     height: 70vh;
     display: grid;
     grid-auto-rows: max-content;
-    border-right: 5px solid rgba(0, 0, 0, 0.5);
-    padding-right: 1rem; /* Optional: adds space before divider */
 }
 
-select {
-    justify-self: center;
-    align-self: center;
-    margin: 0.5rem;
-    padding: 1rem;
-    font-size: 1.5rem;
-    border: None;
-    background-color: rgb(205, 214, 214);
-    border-radius: 16px;
+.left-sidebar-heading {
+    margin-left: 3em;
 }
 
 .card{
-    margin: 1.5rem;
-    padding: 1.5rem;
+    margin: 1rem;
+    padding: 1rem;
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     justify-items: center;
 }
 
+.card input {
+    margin: 0.25em;
+    padding: 0.25em;
+    border-radius: 0.5em;
+    width: 12vw;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #735628;
+}
+
+.servings {
+
+    display: flex;
+}
+
+.servings input, #maxReadyTime{
+    width: 5vw;
+}
+
 .main-content {
     display: flex;
+    margin-right: 1.25em;
     margin-top: 2.5vh;
     width: 75%;
     padding: 0.5rem;
@@ -192,7 +203,10 @@ select {
     align-items: center;
     align-content: flex-end;
     flex-wrap: nowrap;
+    border-radius: 3em;
     background-color: rgb(190, 196, 131,0.90);
+    margin-bottom: 2vh;
+    min-height: fit-content;
 }
 
 .main-content-heading {
@@ -239,24 +253,20 @@ select {
 
 .main-content-process ol {
     list-style-type: decimal;
-    padding-left: 20px;
+    padding-left: 1vw;
 }
 
 .main-content-process {
-    margin-top: 2em;
+    margin-left: 10%;
+    margin-top: 4em;
     max-width: 85%;
     font-size: 1.25em;
 }
 
 .main-content-pic {
-    max-width: 20%;
+    max-width: 100%;
     border-radius: 10px;
 }
-
-.main-content-gallery {
-    width: 100vw;
-    height: 200px;
-    }
     
     @keyframes display {
     0% {
@@ -282,10 +292,10 @@ select {
     }
     
     .main-content-gallery{
+    width: 100%;
+    height: 32vh;
     position: relative;
-    width: 100vw;
-    height: 300px;
-    margin-top: 15vh;
+    margin-top: 5vh;
     }
     
     .main-content-gallery > img {

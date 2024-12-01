@@ -1,53 +1,48 @@
 async function getSpoonacularRecipes({
     query = "",
     enableIntolerance = false,
-    intolerances = ["Dairy", "Egg", "Gluten"],
-    includeIngredients = ["tomatoes", "potatos"],
+    intolerances = "", //["Dairy", "Egg", "Gluten"]
+    includeIngredients = "", //["tomatoes", "potatos"]
     addRecipeInformation = true,
     addRecipeInstructions = true,
     fillIngredients = true,
-    maxReadyTime = 60,
-    minServings = 2,
-    maxServings = 8,
-    maxCalories = 800,
-    minCalories = 50,
+    maxReadyTime = 90,
+    minServings = 1,
+    maxServings = 10,
     number = 1,
     sort = "popularity",
-    typeOptions = ["main course", "dessert", "snack"],
+    type = "main course",//["main course", "dessert", "snack"]
     enableDiet = false,
-    dietOptions = ["vegetarian", "vegan"]
-} = {}) {
-    const API_KEY = "183842a845664e8aafef17967e2d4a85";
-    const flatten = arr => arr.join(',');
+    dietOptions = []//["vegetarian", "vegan"]
+}) {
+    const API_KEY = "183842a845664e8aafef17967e2d4a85"; //other key 05180aa61f224db1856a2fd65a90313a;
     const url = new URL('https://api.spoonacular.com/recipes/complexSearch');
     
     const params = {
         apiKey: API_KEY,
         query: query,
-        includeIngredients: flatten(includeIngredients),
+        includeIngredients: includeIngredients,
         addRecipeInformation: addRecipeInformation,
         addRecipeInstructions: addRecipeInstructions,
         fillIngredients: fillIngredients,
-        typeOptions: typeOptions[0],
+        type: type,
         maxReadyTime: maxReadyTime,
         minServings: minServings,
         maxServings: maxServings,
-        maxCalories: maxCalories,
-        minCalories: minCalories,
         number: number,
         sort: sort
     };
 
     if (enableIntolerance) {
-        params.intolerances = intolerances[0];
+        params.intolerances = intolerances;
     }
     if (enableDiet) {
-        params.diet = dietOptions[0];
+        params.diet = dietOptions;
     }
 
-    Object.keys(params).forEach(key => 
-        url.searchParams.append(key, params[key])
-    );
+    Object.keys(params).forEach(key => {
+        url.searchParams.append(key, params[key]);
+    });
 
     try {
         const response = await fetch(url);
@@ -63,48 +58,44 @@ async function getSpoonacularRecipes({
 
 function updateUIWithRecipeData(data) {
     if (!data.results || !data.results[0]) {
-        console.error('No recipe data available');
+        const titleElement = document.querySelector('.main-content-heading')
+        titleElement.style.color = 'red';
+        titleElement.textContent = "Vastavat retsepti ei leitud"
+        console.error('API did not return recipe data');
         return;
     }
 
     const recipe = data.results[0];
-    
-    // Get both ul elements
-    const [firstList, secondList] = document.querySelectorAll('.main-content-list ul');
-    if (!firstList || !secondList) {
-        console.error('Lists not found');
-        return;
-    }
 
-    // Clear existing items
+    const [firstList, secondList] = document.querySelectorAll('.main-content-list ul'); //gets both lists
     firstList.innerHTML = '';
     secondList.innerHTML = '';
 
     const ingredients = recipe.extendedIngredients;
     const midpoint = Math.ceil(ingredients.length / 2);
 
-    // Populate both lists
-    ingredients.slice(0, midpoint).forEach(ingredient => {
+    const updateIngredientList = (slice, list) => {
+        slice.forEach(ingredient => {
         const li = document.createElement('li');
         li.textContent = `${ingredient.measures.metric.amount} ${ingredient.measures.metric.unitLong} of ${ingredient.originalName}`;
-        firstList.appendChild(li);
-    });
+        list.appendChild(li);
+        });
+    };  
+    updateIngredientList(ingredients.slice(0, midpoint), firstList); //left side
+    updateIngredientList(ingredients.slice(midpoint), secondList); //right side
 
-    ingredients.slice(midpoint).forEach(ingredient => {
-        const li = document.createElement('li');
-        li.textContent = `${ingredient.measures.metric.amount} ${ingredient.measures.metric.unitLong} of ${ingredient.originalName}`;
-        secondList.appendChild(li);
-    });
-
-    // Update title, time, image, and cooking steps
     const titleElement = document.querySelector('.main-content-heading');
-    if (titleElement) titleElement.textContent = recipe.title;
+    if (titleElement) titleElement.textContent = recipe.title; titleElement.style.color = 'black';
 
     const timeElement = document.querySelector('.main-content-time');
     if (timeElement) timeElement.textContent = `Cooking time: ${recipe.readyInMinutes} minutes`;
 
     const thumbnailElement = document.querySelector('.main-content-thumbnail');
     if (thumbnailElement) thumbnailElement.src = recipe.image;
+
+    document.querySelectorAll('.main-content-pic').forEach(img => {
+        img.src = recipe.image;
+    });
 
     const processList = document.querySelector('.main-content-process');
     if (processList && recipe.analyzedInstructions[0]) {
@@ -117,12 +108,37 @@ function updateUIWithRecipeData(data) {
     }
 }
 
+customFields = {}
+
+function handleFoodTextInput(event){
+    customFields[event.target.id] = (event.target.value);
+    console.log(customFields)
+}
+
+function handleFoodIntoleranceInput(event){
+    if (event.target.value !== ''){
+    customFields.enableIntolerances = true;
+    }
+    else {
+        customFields.enableIntolerances = false;
+    }
+    customFields.intolerances = (event.target.value);
+    console.log(customFields)
+}
+
+function handleFoodDietInput(event){
+    if (event.target.value !== ''){
+        customFields.enableIntolerances = true;
+        }
+        else {
+            customFields.enableIntolerances = false;
+        }
+    customFields.dietOptions = (event.target.value);
+    console.log(customFields)
+}
+
 function generateRecipe() {
-    getSpoonacularRecipes({
-        query: "pasta",
-        enableIntolerance: true,
-        includeIngredients: ["tomatoes", "garlic"]
-    })
+    getSpoonacularRecipes(customFields)
         .then(data => {
             console.log(data);
             updateUIWithRecipeData(data);
