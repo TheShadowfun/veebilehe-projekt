@@ -137,8 +137,10 @@ function handleFoodDietInput(event){
     console.log(customFields)
 }
 
-function generateRecipe() {
+function generateRecipe(source) {
+    customFields.type = source
     getSpoonacularRecipes(customFields)
+    console.log(customFields)
         .then(data => {
             console.log(data);
             updateUIWithRecipeData(data);

@@ -151,5 +151,3 @@ function fetchApiContent() {
       apiContentContainer.innerHTML = `<p>Tekkis viga API päringus: ${error.message}</p>`;
     });
 }
-
-

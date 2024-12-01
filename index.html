@@ -31,22 +31,22 @@
           <div class="left-sidebar-cards">
             <div class="card">
               <h3>Kirjelda lühidalt oma soovi (inglise keeles)</h3>
-                <input id="query" placeholder="nt: pasta / curry / lasagne" type="text" 
+                <input id="query" placeholder="nt: pasta / curry / lasagne" type="text" maxlength="15"
                     oninput="handleFoodTextInput(event)" />
             </div>
             <div class="card">
               <h3>Kindlad koostisosa soovid (eralda komaga)</h3>
-              <input id="includeIngredients" placeholder="nt: rice,beans / potato,onion" type="text" 
+              <input id="includeIngredients" placeholder="nt: rice,beans / potato,onion" type="text" maxlength="20"
               oninput="handleFoodTextInput(event)" />
             </div>
             <div class="card">
               <h3>Toidutalumatused</h3>
-              <input id="intolerances" placeholder="nt: gluten / dairy,egg" type="text" 
+              <input id="intolerances" placeholder="nt: gluten / dairy,egg" type="text" maxlength="15"
               oninput="handleFoodIntoleranceInput(event)" />
             </div>
             <div class="card">
                 <h3>Dieet</h3>
-                <input id="dietOptions" placeholder="nt: vegan / vegetarian" type="text" 
+                <input id="dietOptions" placeholder="nt: vegan / vegetarian" type="text" maxlength="15"
                 oninput="handleFoodDietInput(event)" />
             </div> 
             <div class="card">
@@ -93,7 +93,7 @@
           </div>
           <section class="content">
             <div class="box">
-              <button class="cta" onclick="generateRecipe()">
+              <button class="cta" onclick="generateRecipe('main course')">
                   <a >Genereeri retsept <span></span></a>
                   <span class="shape">
                       <span></span>

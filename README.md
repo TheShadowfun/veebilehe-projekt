@@ -1,1 +1,1 @@
-# veebilehe projekti snäkilehe Branch
+# veebilehe projekti Main Branch
