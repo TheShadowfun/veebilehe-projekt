@@ -12,7 +12,8 @@
     <div>
         <div class="nav-wrapper">
         <nav>
-          <h1>LOGO</h1>
+          <img class="LOGO"
+          src="TUDENGIMIIL_logo.png" alt=""> <h1>TUDENGIMIIL</h1>
           <div class="nav-main">
             <a href="index.html">Pearoad</a>
             <a href="magustoidud.html">Magustoidud</a>
@@ -23,33 +24,46 @@
       <div class="content-main">
         <div class="left-sidebar">
 
-          <select>
-            <option value="" disabled selected>Täpsustused</option>
-            <option value="esimene">Esimene valik</option>
-            <option value="teine">Teine valik</option>
-            <option value="kolmas">Kolmas valik</option>
-          </select>
+          <div class="left-sidebar-heading">
+            <h1>Tee oma toidu osas mõned valikud</h1>
+            <h3> (Täida, vaid need, millest hoolid)</h3>
+          </div>
 
           <div class="left-sidebar-cards">
             <div class="card">
-              <h2>Kaart 1</h2>
-              <p>Siin on mingi tekst, mis kirjeldab seda kaarti.</p>
+              <h3>Kirjelda lühidalt oma soovi (inglise keeles)</h3>
+                <input id="query" placeholder="nt: snack plate" type="text" maxlength="15"
+                    oninput="handleFoodTextInput(event)" />
             </div>
             <div class="card">
-              <h2>Kaart 2</h2>
-              <p>Siin on mingi tekst, mis kirjeldab seda kaarti.</p>
+              <h3>Kindlad koostisosa soovid (eralda komaga)</h3>
+              <input id="includeIngredients" placeholder="nt: cheese / sausages / eggs" type="text" maxlength="20"
+              oninput="handleFoodTextInput(event)" />
             </div>
             <div class="card">
-              <h2>Kaart 3</h2>
-              <p>Siin on mingi tekst, mis kirjeldab seda kaarti.</p>
+              <h3>Toidutalumatused</h3>
+              <input id="intolerances" placeholder="nt: gluten / dairy,egg" type="text" maxlength="15"
+              oninput="handleFoodIntoleranceInput(event)" />
             </div>
-            <div class="section-nav">
-              <h3>Jump to Sections</h3>
-              <ul>
-                  <li><a href="#ingredients">Ingredients</a></li>
-                  <li><a href="#instructions">Instructions</a></li>
-              </ul>
+            <div class="card">
+                <h3>Dieet</h3>
+                <input id="dietOptions" placeholder="nt: vegan / vegetarian" type="text" max="15"
+                oninput="handleFoodDietInput(event)" />
+            </div> 
+            <div class="card">
+              <h3>Maksmimaalne valmistusaeg (minutites)</h3>
+              <input id="maxReadyTime" placeholder="90" type="number" 
+              oninput="handleFoodTextInput(event)" max="180" min="10" />
+            </div> 
+            <div class="card">
+              <h3>Portsionite arvu vahemik</h3>
+              <div class="servings">
+              <input id="minServings" placeholder="1" type="number" 
+              oninput="handleFoodTextInput(event)" max="10" min="1" />
+              <input id="maxServings" placeholder="10" type="number" 
+              oninput="handleFoodTextInput(event)" max="10" min="1" />
             </div>
+            </div> 
           </div>
         </div>
         
@@ -104,8 +118,8 @@
       </div>
       </div>
     </div>
-    <script src="main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="nupp.js"></script>
+    <script src="magustoit.js"></script> <!-- JS kood, et API kaudu genereerida retsept-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Vajalik source, et nupu klikk-effekt töötaks-->
+    <script src="nupp.js"></script> <!-- Nupu JS kood, et nupule klikkimise effekt töötaks -->
   </body>
 </html>
