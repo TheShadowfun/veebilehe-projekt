@@ -15,6 +15,7 @@ async function getSpoonacularRecipes({
     enableDiet = false,
     dietOptions = []//["vegetarian", "vegan"]
 }) {
+    //avalikustame oma API võtme teadlikult, kuna sellega on seotud vaid free tier konto, millel on limiidid peal
     const API_KEY = "183842a845664e8aafef17967e2d4a85"; //other key 05180aa61f224db1856a2fd65a90313a;
     const url = new URL('https://api.spoonacular.com/recipes/complexSearch');
     
@@ -98,6 +99,7 @@ function updateUIWithRecipeData(data) {
     });
 
     const processList = document.querySelector('.main-content-process');
+    console.log(processList)
     if (processList && recipe.analyzedInstructions[0]) {
         processList.innerHTML = '';
         recipe.analyzedInstructions[0].steps.forEach(step => {
@@ -139,8 +141,8 @@ function handleFoodDietInput(event){
 
 function generateRecipe(source) {
     customFields.type = source
-    getSpoonacularRecipes(customFields)
     console.log(customFields)
+    getSpoonacularRecipes(customFields)
         .then(data => {
             console.log(data);
             updateUIWithRecipeData(data);
