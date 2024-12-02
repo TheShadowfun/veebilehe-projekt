@@ -1,3 +1,7 @@
+/*
+Siin failis on funktsionaalsus üles ehitatud Spoonacular tasuta taseme API najal. https://spoonacular.com/food-api/docs
+*/
+
 async function getSpoonacularRecipes({
     query = "",
     enableIntolerance = false,
@@ -16,7 +20,7 @@ async function getSpoonacularRecipes({
     dietOptions = []//["vegetarian", "vegan"]
 }) {
     //avalikustame oma API võtme teadlikult, kuna sellega on seotud vaid free tier konto, millel on limiidid peal
-    const API_KEY = "183842a845664e8aafef17967e2d4a85"; //other key 05180aa61f224db1856a2fd65a90313a;
+    const API_KEY = "05180aa61f224db1856a2fd65a90313a"; //other key 183842a845664e8aafef17967e2d4a85
     const url = new URL('https://api.spoonacular.com/recipes/complexSearch');
     
     const params = {
@@ -48,11 +52,11 @@ async function getSpoonacularRecipes({
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`API vastas veateatega: ${response.status}`);
         }
         return await response.json();
     } catch (error) {
-        console.error('Error fetching recipes:', error);
+        console.error("API'ga suhtluse käigus tekkis viga:", error);
         throw error;
     }
 }
@@ -62,7 +66,7 @@ function updateUIWithRecipeData(data) {
         const titleElement = document.querySelector('.main-content-heading')
         titleElement.style.color = 'red';
         titleElement.textContent = "Vastavat retsepti ei leitud"
-        console.error('API did not return recipe data');
+        console.error('Vastavat retsepti ei leitud');
         return;
     }
 
@@ -99,7 +103,6 @@ function updateUIWithRecipeData(data) {
     });
 
     const processList = document.querySelector('.main-content-process');
-    console.log(processList)
     if (processList && recipe.analyzedInstructions[0]) {
         processList.innerHTML = '';
         recipe.analyzedInstructions[0].steps.forEach(step => {
@@ -114,7 +117,6 @@ customFields = {}
 
 function handleFoodTextInput(event){
     customFields[event.target.id] = (event.target.value);
-    console.log(customFields)
 }
 
 function handleFoodIntoleranceInput(event){
@@ -125,27 +127,23 @@ function handleFoodIntoleranceInput(event){
         customFields.enableIntolerances = false;
     }
     customFields.intolerances = (event.target.value);
-    console.log(customFields)
 }
 
 function handleFoodDietInput(event){
     if (event.target.value !== ''){
-        customFields.enableIntolerances = true;
+        customFields.enableDiet = true;
         }
         else {
-            customFields.enableIntolerances = false;
+            customFields.enableDiet = false;
         }
     customFields.dietOptions = (event.target.value);
-    console.log(customFields)
 }
 
 function generateRecipe(source) {
     customFields.type = source
-    console.log(customFields)
     getSpoonacularRecipes(customFields)
         .then(data => {
-            console.log(data);
             updateUIWithRecipeData(data);
         })
-        .catch(error => console.error(error));
+        .catch(error => `API'ga suhtlusel ilmnes viga, uut retsepti ei kuvata (${error})`);
 }
