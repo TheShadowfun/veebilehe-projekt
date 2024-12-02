@@ -245,12 +245,16 @@ nav {
     height: 32vh;
     position: relative;
     margin-top: 1.5rm;
+    margin-bottom: auto;
     }
     
     .main-content-gallery > img {
     position: absolute;
     top: 0;
-    left: calc(50% - 100px); 
+    width: 450px;
+    height: auto;
+    margin-bottom: 1.5rm;
+    left: calc(27% - 100px); 
     opacity: 0;
     animation: display 10s infinite;
     }
